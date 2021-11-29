@@ -198,4 +198,20 @@ public class CountryEnumTest {
 		assertFalse(CountryEnum.IN.isEu());
 	}
 
+	@Test
+	@Order(28)
+	void testAlpha3() {
+		String expected = "IND";
+		String actual = CountryEnum.alpha3(CountryEnum.IN);
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(29)
+	void testAlpha3From() {
+		String expected = "IND";
+		String actual = CountryEnum.IN.alpha3();
+		assertEquals(expected, actual);
+	}
+
 }
