@@ -1,8 +1,10 @@
 package fi.ishtech.core.i18n.enums;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
@@ -138,6 +140,62 @@ public class CountryEnumTest {
 	@Order(19)
 	void testFromNameIgnoreCaseOrElseNullWhenNotFound() {
 		assertNull(CountryEnum.fromNameIgnoreCaseOrElseNull(" ABCD "));
+	}
+
+	@Test
+	@Order(20)
+	void testFullName() {
+		String expected = "India";
+		String actual = CountryEnum.fullName(CountryEnum.IN);
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(21)
+	void testFullNameFrom() {
+		String expected = "India";
+		String actual = CountryEnum.IN.fullName();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(22)
+	void testOfficialName() {
+		String expected = "The Republic of India";
+		String actual = CountryEnum.officialName(CountryEnum.IN);
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(23)
+	void testOfficialNameFrom() {
+		String expected = "The Republic of India";
+		String actual = CountryEnum.IN.officialName();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(24)
+	void testIsEu() {
+		assertTrue(CountryEnum.isEu(CountryEnum.FI));
+	}
+
+	@Test
+	@Order(25)
+	void testIsEuFrom() {
+		assertTrue(CountryEnum.FI.isEu());
+	}
+
+	@Test
+	@Order(26)
+	void testIsEuNegative() {
+		assertFalse(CountryEnum.isEu(CountryEnum.IN));
+	}
+
+	@Test
+	@Order(27)
+	void testIsEuFromNegative() {
+		assertFalse(CountryEnum.IN.isEu());
 	}
 
 }
