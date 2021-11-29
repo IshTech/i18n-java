@@ -415,12 +415,10 @@ public enum CountryEnum {
 	}
 
 	public static boolean isEu(CountryEnum name) {
-		// TOOD:
-		return false;
+		return LIST_EU.contains(name);
 	}
 
 	public boolean isEu() {
-		// TOOD:
 		return isEu(this);
 	}
 
@@ -934,4 +932,36 @@ public enum CountryEnum {
 			);
 	// @formatter:on
 
+	// @formatter:off
+	private static final List<CountryEnum> LIST_EU = List.of(
+			AT,
+			BE,
+			BG,
+			HR,
+			CY,
+			CZ,
+			DK,
+			EE,
+			FI,
+			FR,
+			DE,
+			GR,
+			HU,
+			IE,
+			IT,
+			LV,
+			LT,
+			LU,
+			MT,
+			NL,
+			PL,
+			PT,
+			RO,
+			SK,
+			SI,
+			ES,
+			SE
+		);
+	// @formatter:on
+	
 }
