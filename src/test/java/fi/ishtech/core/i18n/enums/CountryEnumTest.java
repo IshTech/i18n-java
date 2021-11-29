@@ -214,4 +214,20 @@ public class CountryEnumTest {
 		assertEquals(expected, actual);
 	}
 
+	@Test
+	@Order(30)
+	void testNumeric3() {
+		String expected = "356";
+		String actual = CountryEnum.numeric3(CountryEnum.IN);
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(31)
+	void testNumericFrom() {
+		String expected = "356";
+		String actual = CountryEnum.IN.numeric3();
+		assertEquals(expected, actual);
+	}
+
 }

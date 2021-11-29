@@ -377,7 +377,7 @@ public enum CountryEnum {
 	/**
 	 * Full name of the country.
 	 *
-	 * @param {{@code name}
+	 * @param {@code name}
 	 *
 	 * @return {@link String}
 	 */
@@ -397,7 +397,7 @@ public enum CountryEnum {
 	/**
 	 * Official name of the country.
 	 *
-	 * @param {{@code name}
+	 * @param {@code name}
 	 *
 	 * @return {@link String}
 	 */
@@ -417,7 +417,7 @@ public enum CountryEnum {
 	/**
 	 * Alpha-3 code of the country.
 	 *
-	 * @param {{@code name}
+	 * @param {@code name}
 	 *
 	 * @return {@link String}
 	 */
@@ -426,12 +426,32 @@ public enum CountryEnum {
 	}
 
 	/**
-	 * Alpha-3 name of the country.
+	 * Alpha-3 code of the country.
 	 *
 	 * @return {@link String}
 	 */
 	public String alpha3() {
 		return alpha3(this);
+	}
+
+	/**
+	 * Numeric-3 code of the country.
+	 *
+	 * @param {@code name}
+	 *
+	 * @return {@link String}
+	 */
+	public static String numeric3(CountryEnum name) {
+		return MAP_COUNTRY_NUMERIC_3.get(name);
+	}
+
+	/**
+	 * Numeric-3 code of the country.
+	 *
+	 * @return {@link String}
+	 */
+	public String numeric3() {
+		return numeric3(this);
 	}
 
 	public static boolean isEu(CountryEnum name) {
@@ -1204,6 +1224,261 @@ public enum CountryEnum {
 				Map.entry(YE, "YEM"),
 				Map.entry(ZM, "ZMB"),
 				Map.entry(ZW, "ZWE")
+			);
+	// @formatter:on
+
+	// @formatter:off
+	private static final Map<CountryEnum, String> MAP_COUNTRY_NUMERIC_3 =
+			Map.ofEntries(
+				Map.entry(AF, "004"),
+				Map.entry(AX, "248"),
+				Map.entry(AL, "008"),
+				Map.entry(DZ, "012"),
+				Map.entry(AS, "016"),
+				Map.entry(AD, "020"),
+				Map.entry(AO, "024"),
+				Map.entry(AI, "660"),
+				Map.entry(AQ, "010"),
+				Map.entry(AG, "028"),
+				Map.entry(AR, "032"),
+				Map.entry(AM, "051"),
+				Map.entry(AW, "533"),
+				Map.entry(AU, "036"),
+				Map.entry(AT, "040"),
+				Map.entry(AZ, "031"),
+				Map.entry(BS, "044"),
+				Map.entry(BH, "048"),
+				Map.entry(BD, "050"),
+				Map.entry(BB, "052"),
+				Map.entry(BY, "112"),
+				Map.entry(BE, "056"),
+				Map.entry(BZ, "084"),
+				Map.entry(BJ, "204"),
+				Map.entry(BM, "060"),
+				Map.entry(BT, "064"),
+				Map.entry(BO, "068"),
+				Map.entry(BQ, "535"),
+				Map.entry(BA, "070"),
+				Map.entry(BW, "072"),
+				Map.entry(BV, "074"),
+				Map.entry(BR, "076"),
+				Map.entry(IO, "086"),
+				Map.entry(BN, "096"),
+				Map.entry(BG, "100"),
+				Map.entry(BF, "854"),
+				Map.entry(BI, "108"),
+				Map.entry(CV, "132"),
+				Map.entry(KH, "116"),
+				Map.entry(CM, "120"),
+				Map.entry(CA, "124"),
+				Map.entry(KY, "136"),
+				Map.entry(CF, "140"),
+				Map.entry(TD, "148"),
+				Map.entry(CL, "152"),
+				Map.entry(CN, "156"),
+				Map.entry(CX, "162"),
+				Map.entry(CC, "166"),
+				Map.entry(CO, "170"),
+				Map.entry(KM, "174"),
+				Map.entry(CD, "180"),
+				Map.entry(CG, "178"),
+				Map.entry(CK, "184"),
+				Map.entry(CR, "188"),
+				Map.entry(CI, "384"),
+				Map.entry(HR, "191"),
+				Map.entry(CU, "192"),
+				Map.entry(CW, "531"),
+				Map.entry(CY, "196"),
+				Map.entry(CZ, "203"),
+				Map.entry(DK, "208"),
+				Map.entry(DJ, "262"),
+				Map.entry(DM, "212"),
+				Map.entry(DO, "214"),
+				Map.entry(EC, "218"),
+				Map.entry(EG, "818"),
+				Map.entry(SV, "222"),
+				Map.entry(GQ, "226"),
+				Map.entry(ER, "232"),
+				Map.entry(EE, "233"),
+				Map.entry(SZ, "748"),
+				Map.entry(ET, "231"),
+				Map.entry(FK, "238"),
+				Map.entry(FO, "234"),
+				Map.entry(FJ, "242"),
+				Map.entry(FI, "246"),
+				Map.entry(FR, "250"),
+				Map.entry(GF, "254"),
+				Map.entry(PF, "258"),
+				Map.entry(TF, "260"),
+				Map.entry(GA, "266"),
+				Map.entry(GM, "270"),
+				Map.entry(GE, "268"),
+				Map.entry(DE, "276"),
+				Map.entry(GH, "288"),
+				Map.entry(GI, "292"),
+				Map.entry(GR, "300"),
+				Map.entry(GL, "304"),
+				Map.entry(GD, "308"),
+				Map.entry(GP, "312"),
+				Map.entry(GU, "316"),
+				Map.entry(GT, "320"),
+				Map.entry(GG, "831"),
+				Map.entry(GN, "324"),
+				Map.entry(GW, "624"),
+				Map.entry(GY, "328"),
+				Map.entry(HT, "332"),
+				Map.entry(HM, "334"),
+				Map.entry(VA, "336"),
+				Map.entry(HN, "340"),
+				Map.entry(HK, "344"),
+				Map.entry(HU, "348"),
+				Map.entry(IS, "352"),
+				Map.entry(IN, "356"),
+				Map.entry(ID, "360"),
+				Map.entry(IR, "364"),
+				Map.entry(IQ, "368"),
+				Map.entry(IE, "372"),
+				Map.entry(IM, "833"),
+				Map.entry(IL, "376"),
+				Map.entry(IT, "380"),
+				Map.entry(JM, "388"),
+				Map.entry(JP, "392"),
+				Map.entry(JE, "832"),
+				Map.entry(JO, "400"),
+				Map.entry(KZ, "398"),
+				Map.entry(KE, "404"),
+				Map.entry(KI, "296"),
+				Map.entry(KP, "408"),
+				Map.entry(KR, "410"),
+				Map.entry(KW, "414"),
+				Map.entry(KG, "417"),
+				Map.entry(LA, "418"),
+				Map.entry(LV, "428"),
+				Map.entry(LB, "422"),
+				Map.entry(LS, "426"),
+				Map.entry(LR, "430"),
+				Map.entry(LY, "434"),
+				Map.entry(LI, "438"),
+				Map.entry(LT, "440"),
+				Map.entry(LU, "442"),
+				Map.entry(MO, "446"),
+				Map.entry(MK, "807"),
+				Map.entry(MG, "450"),
+				Map.entry(MW, "454"),
+				Map.entry(MY, "458"),
+				Map.entry(MV, "462"),
+				Map.entry(ML, "466"),
+				Map.entry(MT, "470"),
+				Map.entry(MH, "584"),
+				Map.entry(MQ, "474"),
+				Map.entry(MR, "478"),
+				Map.entry(MU, "480"),
+				Map.entry(YT, "175"),
+				Map.entry(MX, "484"),
+				Map.entry(FM, "583"),
+				Map.entry(MD, "498"),
+				Map.entry(MC, "492"),
+				Map.entry(MN, "496"),
+				Map.entry(ME, "499"),
+				Map.entry(MS, "500"),
+				Map.entry(MA, "504"),
+				Map.entry(MZ, "508"),
+				Map.entry(MM, "104"),
+				Map.entry(NA, "516"),
+				Map.entry(NR, "520"),
+				Map.entry(NP, "524"),
+				Map.entry(NL, "528"),
+				Map.entry(NC, "540"),
+				Map.entry(NZ, "554"),
+				Map.entry(NI, "558"),
+				Map.entry(NE, "562"),
+				Map.entry(NG, "566"),
+				Map.entry(NU, "570"),
+				Map.entry(NF, "574"),
+				Map.entry(MP, "580"),
+				Map.entry(NO, "578"),
+				Map.entry(OM, "512"),
+				Map.entry(PK, "586"),
+				Map.entry(PW, "585"),
+				Map.entry(PS, "275"),
+				Map.entry(PA, "591"),
+				Map.entry(PG, "598"),
+				Map.entry(PY, "600"),
+				Map.entry(PE, "604"),
+				Map.entry(PH, "608"),
+				Map.entry(PN, "612"),
+				Map.entry(PL, "616"),
+				Map.entry(PT, "620"),
+				Map.entry(PR, "630"),
+				Map.entry(QA, "634"),
+				Map.entry(RE, "638"),
+				Map.entry(RO, "642"),
+				Map.entry(RU, "643"),
+				Map.entry(RW, "646"),
+				Map.entry(BL, "652"),
+				Map.entry(SH, "654"),
+				Map.entry(KN, "659"),
+				Map.entry(LC, "662"),
+				Map.entry(MF, "663"),
+				Map.entry(PM, "666"),
+				Map.entry(VC, "670"),
+				Map.entry(WS, "882"),
+				Map.entry(SM, "674"),
+				Map.entry(ST, "678"),
+				Map.entry(SA, "682"),
+				Map.entry(SN, "686"),
+				Map.entry(RS, "688"),
+				Map.entry(SC, "690"),
+				Map.entry(SL, "694"),
+				Map.entry(SG, "702"),
+				Map.entry(SX, "534"),
+				Map.entry(SK, "703"),
+				Map.entry(SI, "705"),
+				Map.entry(SB, "090"),
+				Map.entry(SO, "706"),
+				Map.entry(ZA, "710"),
+				Map.entry(GS, "239"),
+				Map.entry(SS, "728"),
+				Map.entry(ES, "724"),
+				Map.entry(LK, "144"),
+				Map.entry(SD, "729"),
+				Map.entry(SR, "740"),
+				Map.entry(SJ, "744"),
+				Map.entry(SE, "752"),
+				Map.entry(CH, "756"),
+				Map.entry(SY, "760"),
+				Map.entry(TW, "158"),
+				Map.entry(TJ, "762"),
+				Map.entry(TZ, "834"),
+				Map.entry(TH, "764"),
+				Map.entry(TL, "626"),
+				Map.entry(TG, "768"),
+				Map.entry(TK, "772"),
+				Map.entry(TO, "776"),
+				Map.entry(TT, "780"),
+				Map.entry(TN, "788"),
+				Map.entry(TR, "792"),
+				Map.entry(TM, "795"),
+				Map.entry(TC, "796"),
+				Map.entry(TV, "798"),
+				Map.entry(UG, "800"),
+				Map.entry(UA, "804"),
+				Map.entry(AE, "784"),
+				Map.entry(GB, "826"),
+				Map.entry(UM, "581"),
+				Map.entry(US, "840"),
+				Map.entry(UY, "858"),
+				Map.entry(UZ, "860"),
+				Map.entry(VU, "548"),
+				Map.entry(VE, "862"),
+				Map.entry(VN, "704"),
+				Map.entry(VG, "092"),
+				Map.entry(VI, "850"),
+				Map.entry(WF, "876"),
+				Map.entry(EH, "732"),
+				Map.entry(YE, "887"),
+				Map.entry(ZM, "894"),
+				Map.entry(ZW, "716")
 			);
 	// @formatter:on
 
