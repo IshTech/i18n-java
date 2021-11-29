@@ -310,32 +310,86 @@ public enum LangEnum {
 		return NAMES_LIST.contains(name.trim().toLowerCase()) ? fromNameIgnoreCase(name) : null;
 	}
 
+	/**
+	 * Returns map of full names in each available langauge.
+	 *
+	 * @return {@link Map}&lt;{@link LangEnum}, {@link Map}&lt;{@link LangEnum}, {@link String}&gt;&gt;
+	 */
 	public static Map<LangEnum, Map<LangEnum, String>> fullNames() {
 		return MAP_LANG_FULL_NAME;
 	}
 
+	/**
+	 * Returns full names in input langauge.
+	 *
+	 * @param keyLang
+	 *
+	 * @return {@link Map}&lt;{@link LangEnum}, {@link String}&gt;
+	 */
 	public static Map<LangEnum, String> fullNames(LangEnum keyLang) {
 		return MAP_LANG_FULL_NAME.get(keyLang);
 	}
 
 	/**
+	 * Returns full names in English.
+	 *
+	 * @return {@link Map}&lt;{@link LangEnum}, {@link String}&gt;
+	 */
+	public static Map<LangEnum, String> fullNamesInEn() {
+		return MAP_LANG_FULL_NAME.get(en);
+	}
+
+	/**
+	 * FullName for {@code inputLang} in {@code keyLang},<br>
+	 * e.g. if keyLang = fi, inputLang = en, it returns Englanti.
 	 *
 	 * @param keyLang
 	 * @param inputLang
 	 *
-	 * @return FullName for {@code inputLang} in {@code keyLang},<br>
-	 *         e.g. if keyLang = fi, inputLang = en, it returns Englanti
+	 * @return {@link String}
 	 */
 	public static String fullName(LangEnum keyLang, LangEnum inputLang) {
 		return MAP_LANG_FULL_NAME.containsKey(keyLang) ? MAP_LANG_FULL_NAME.get(keyLang).get(inputLang) : null;
 	}
 
+	/**
+	 * Full name of current language in input language.
+	 *
+	 * @param keyLang
+	 *
+	 * @return {@link String}
+	 */
 	public String fullName(LangEnum keyLang) {
 		return fullName(keyLang, this);
 	}
 
+	/**
+	 * Full name of current language in own languge.
+	 *
+	 * @return {@link String}
+	 */
 	public String fullName() {
 		return fullName(this, this);
+	}
+
+	/**
+	 * Full name of input language in English.
+	 *
+	 * @param inputLang
+	 *
+	 * @return {@link String}
+	 */
+	public static String fullNameInEn(LangEnum inputLang) {
+		return fullName(en, inputLang);
+	}
+
+	/**
+	 * Full name of current language in English.
+	 *
+	 * @return {@link String}
+	 */
+	public String fullNameInEn() {
+		return fullName(en, this);
 	}
 
 	// @formatter:off
@@ -525,14 +579,14 @@ public enum LangEnum {
 					Map.entry(za , "Zhuang"),
 					Map.entry(zh , "Chinese"),
 					Map.entry(zu , "Zulu")
-			)),
-			Map.entry(fi, Map.ofEntries(
-				Map.entry(ar, "Arabic"),
-				Map.entry(en, "Englanti"),
-				Map.entry(fi, "Suomi"),
-				Map.entry(ru, "Venäjä"),
-				Map.entry(sv, "Ruotsi")
-			))
+				)),
+				Map.entry(fi, Map.ofEntries(
+					Map.entry(ar, "Arabic"),
+					Map.entry(en, "Englanti"),
+					Map.entry(fi, "Suomi"),
+					Map.entry(ru, "Venäjä"),
+					Map.entry(sv, "Ruotsi")
+				))
 		);
 	// @formatter:on
 
