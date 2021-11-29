@@ -377,7 +377,8 @@ public enum CountryEnum {
 	/**
 	 * Full name of the country.
 	 *
-	 * @param name - input enum name
+	 * @param name
+	 *            - input enum name
 	 *
 	 * @return {@link String}
 	 */
@@ -397,7 +398,8 @@ public enum CountryEnum {
 	/**
 	 * Official name of the country.
 	 *
-	 * @param name - input enum name
+	 * @param name
+	 *            - input enum name
 	 *
 	 * @return {@link String}
 	 */
@@ -417,7 +419,8 @@ public enum CountryEnum {
 	/**
 	 * Alpha-3 code of the country.
 	 *
-	 * @param name - input enum name
+	 * @param name
+	 *            - input enum name
 	 *
 	 * @return {@link String}
 	 */
@@ -437,7 +440,8 @@ public enum CountryEnum {
 	/**
 	 * Numeric-3 code of the country.
 	 *
-	 * @param name - input enum name
+	 * @param name
+	 *            - input enum name
 	 *
 	 * @return {@link String}
 	 */
@@ -457,7 +461,8 @@ public enum CountryEnum {
 	/**
 	 * Top level domain (ccTLD) of the country.
 	 *
-	 * @param name - input enum name
+	 * @param name
+	 *            - input enum name
 	 *
 	 * @return {@link String}
 	 */
@@ -478,7 +483,8 @@ public enum CountryEnum {
 	/**
 	 * Top level domain (ccTLD) of the country.
 	 *
-	 * @param name - input enum name
+	 * @param name
+	 *            - input enum name
 	 *
 	 * @return {@link List}&lt;{@link String}&gt;
 	 */
@@ -498,7 +504,8 @@ public enum CountryEnum {
 	/**
 	 * Cheks if the country is part of EU.
 	 *
-	 * @param name - input enum name
+	 * @param name
+	 *            - input enum name
 	 *
 	 * @return true or false
 	 */

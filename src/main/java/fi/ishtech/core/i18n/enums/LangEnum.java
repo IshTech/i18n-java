@@ -322,7 +322,8 @@ public enum LangEnum {
 	/**
 	 * Returns full names in input langauge.
 	 *
-	 * @param keyLang - in which language you want full names in.
+	 * @param keyLang
+	 *            - in which language you want full names in.
 	 *
 	 * @return {@link Map}&lt;{@link LangEnum}, {@link String}&gt;
 	 */
@@ -343,8 +344,10 @@ public enum LangEnum {
 	 * FullName for {@code inputLang} in {@code keyLang},<br>
 	 * e.g. if keyLang = fi, inputLang = en, it returns Englanti.
 	 *
-	 * @param keyLang - in which language you want full names in.
-	 * @param inputLang - for which language you want the full name.
+	 * @param keyLang
+	 *            - in which language you want full names in.
+	 * @param inputLang
+	 *            - for which language you want the full name.
 	 *
 	 * @return {@link String}
 	 */
@@ -355,7 +358,8 @@ public enum LangEnum {
 	/**
 	 * Full name of current language in input language.
 	 *
-	 * @param keyLang - in which language you want full names in.
+	 * @param keyLang
+	 *            - in which language you want full names in.
 	 *
 	 * @return {@link String}
 	 */
@@ -375,7 +379,8 @@ public enum LangEnum {
 	/**
 	 * Full name of input language in English.
 	 *
-	 * @param inputLang - for which language you want the full name.
+	 * @param inputLang
+	 *            - for which language you want the full name.
 	 *
 	 * @return {@link String}
 	 */
