@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.List;
+
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -227,6 +229,37 @@ public class CountryEnumTest {
 	void testNumericFrom() {
 		String expected = "356";
 		String actual = CountryEnum.IN.numeric3();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(32)
+	void testCcTld() {
+		String expected = ".in";
+		String actual = CountryEnum.ccTLD(CountryEnum.IN);
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(33)
+	void testCcTldFrom() {
+		String expected = ".in";
+		String actual = CountryEnum.IN.ccTLD();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(34)
+	void testCcTldNull() {
+		assertNull(CountryEnum.ccTLD(CountryEnum.EH));
+	}
+
+	@Test
+	@Order(35)
+	void testCcTlds() {
+		List<String> expected = List.of(".gb", ".uk");
+		List<String> actual = CountryEnum.ccTLDs(CountryEnum.GB);
+		// TODO: should compare list values and not their order
 		assertEquals(expected, actual);
 	}
 
