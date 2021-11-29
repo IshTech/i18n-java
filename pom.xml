@@ -37,7 +37,7 @@
 	</developers>
 
 	<scm>
-		<url>https://github.com/ishtech/i18n-java</url>
+		<url>https://github.com/ishtech/ishtech-i18n-java</url>
 	</scm>
 
 	<distributionManagement>
