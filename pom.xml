@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>fi.ishtech.core</groupId>
-	<artifactId>i18n</artifactId>
-	<version>0.2.0-SNAPSHOT</version>
+	<artifactId>ishtech-i18n</artifactId>
+	<version>0.3.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>i18n</name>
+	<name>ishtech-i18n</name>
 	<description>Java Utils for Languages</description>
 	<url>https://www.ishtech.fi/projects/i18n-java</url>
 
