@@ -377,7 +377,7 @@ public enum CountryEnum {
 	/**
 	 * Full name of the country.
 	 *
-	 * @param {@code name}
+	 * @param name - input enum name
 	 *
 	 * @return {@link String}
 	 */
@@ -397,7 +397,7 @@ public enum CountryEnum {
 	/**
 	 * Official name of the country.
 	 *
-	 * @param {@code name}
+	 * @param name - input enum name
 	 *
 	 * @return {@link String}
 	 */
@@ -417,7 +417,7 @@ public enum CountryEnum {
 	/**
 	 * Alpha-3 code of the country.
 	 *
-	 * @param {@code name}
+	 * @param name - input enum name
 	 *
 	 * @return {@link String}
 	 */
@@ -437,7 +437,7 @@ public enum CountryEnum {
 	/**
 	 * Numeric-3 code of the country.
 	 *
-	 * @param {@code name}
+	 * @param name - input enum name
 	 *
 	 * @return {@link String}
 	 */
@@ -457,7 +457,7 @@ public enum CountryEnum {
 	/**
 	 * Top level domain (ccTLD) of the country.
 	 *
-	 * @param {@code name}
+	 * @param name - input enum name
 	 *
 	 * @return {@link String}
 	 */
@@ -478,7 +478,7 @@ public enum CountryEnum {
 	/**
 	 * Top level domain (ccTLD) of the country.
 	 *
-	 * @param {@code name}
+	 * @param name - input enum name
 	 *
 	 * @return {@link List}&lt;{@link String}&gt;
 	 */
@@ -495,10 +495,22 @@ public enum CountryEnum {
 		return ccTLDs(this);
 	}
 
+	/**
+	 * Cheks if the country is part of EU.
+	 *
+	 * @param name - input enum name
+	 *
+	 * @return true or false
+	 */
 	public static boolean isEu(CountryEnum name) {
 		return LIST_EU.contains(name);
 	}
 
+	/**
+	 * Cheks if the country is part of EU.
+	 *
+	 * @return true or false
+	 */
 	public boolean isEu() {
 		return isEu(this);
 	}
