@@ -1787,39 +1787,35 @@ public enum CountryEnum {
 		MAP_CC_TLD.put(ZW, List.of(".zw"));
 	}
 
-	// @formatter:off
-	private static final List<CountryEnum> LIST_EU;
+	private static final List<CountryEnum> LIST_EU = new ArrayList<CountryEnum>(0);
 	static {
-		LIST_EU = List.of(
-			AT,
-			BE,
-			BG,
-			HR,
-			CY,
-			CZ,
-			DK,
-			EE,
-			FI,
-			FR,
-			DE,
-			GR,
-			HU,
-			IE,
-			IT,
-			LV,
-			LT,
-			LU,
-			MT,
-			NL,
-			PL,
-			PT,
-			RO,
-			SK,
-			SI,
-			ES,
-			SE
-		);
+		LIST_EU.add(AE);
+		LIST_EU.add(BE);
+		LIST_EU.add(BG);
+		LIST_EU.add(HR);
+		LIST_EU.add(CY);
+		LIST_EU.add(CZ);
+		LIST_EU.add(DK);
+		LIST_EU.add(EE);
+		LIST_EU.add(FI);
+		LIST_EU.add(FR);
+		LIST_EU.add(DE);
+		LIST_EU.add(GR);
+		LIST_EU.add(HU);
+		LIST_EU.add(IE);
+		LIST_EU.add(IT);
+		LIST_EU.add(LV);
+		LIST_EU.add(LT);
+		LIST_EU.add(LU);
+		LIST_EU.add(MT);
+		LIST_EU.add(NL);
+		LIST_EU.add(PL);
+		LIST_EU.add(PT);
+		LIST_EU.add(RO);
+		LIST_EU.add(SK);
+		LIST_EU.add(SI);
+		LIST_EU.add(ES);
+		LIST_EU.add(SE);
 	}
-	// @formatter:on
 
 }
