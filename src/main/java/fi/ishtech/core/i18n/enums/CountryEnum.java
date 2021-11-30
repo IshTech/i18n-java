@@ -1,6 +1,7 @@
 package fi.ishtech.core.i18n.enums;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -264,7 +265,7 @@ public enum CountryEnum {
 
 	private final static List<String> NAMES_LIST = new ArrayList<String>(0);
 	static {
-		for(CountryEnum c : values()) {
+		for (CountryEnum c : values()) {
 			NAMES_LIST.add(c.name());
 		}
 	}
@@ -524,262 +525,258 @@ public enum CountryEnum {
 		return isEu(this);
 	}
 
-	private static final Map<CountryEnum, String> MAP_COUNTRY_FULL_NAME;
-	// @formatter:off
+	private static final Map<CountryEnum, String> MAP_COUNTRY_FULL_NAME = new HashMap<CountryEnum, String>();
 	static {
-		MAP_COUNTRY_FULL_NAME = Map.ofEntries(
-				Map.entry(AF, "Afghanistan"),
-				Map.entry(AX, "Åland Islands"),
-				Map.entry(AL, "Albania"),
-				Map.entry(DZ, "Algeria"),
-				Map.entry(AS, "American Samoa"),
-				Map.entry(AD, "Andorra"),
-				Map.entry(AO, "Angola"),
-				Map.entry(AI, "Anguilla"),
-				Map.entry(AQ, "Antarctica"),
-				Map.entry(AG, "Antigua and Barbuda"),
-				Map.entry(AR, "Argentina"),
-				Map.entry(AM, "Armenia"),
-				Map.entry(AW, "Aruba"),
-				Map.entry(AU, "Australia"),
-				Map.entry(AT, "Austria"),
-				Map.entry(AZ, "Azerbaijan"),
-				Map.entry(BS, "Bahamas"),
-				Map.entry(BH, "Bahrain"),
-				Map.entry(BD, "Bangladesh"),
-				Map.entry(BB, "Barbados"),
-				Map.entry(BY, "Belarus"),
-				Map.entry(BE, "Belgium"),
-				Map.entry(BZ, "Belize"),
-				Map.entry(BJ, "Benin"),
-				Map.entry(BM, "Bermuda"),
-				Map.entry(BT, "Bhutan"),
-				Map.entry(BO, "Bolivia"),
-				Map.entry(BQ, "Bonaire, Sint Eustatius and Saba"),
-				Map.entry(BA, "Bosnia and Herzegovina"),
-				Map.entry(BW, "Botswana"),
-				Map.entry(BV, "Bouvet Island"),
-				Map.entry(BR, "Brazil"),
-				Map.entry(IO, "British Indian Ocean Territory"),
-				Map.entry(BN, "Brunei Darussalam"),
-				Map.entry(BG, "Bulgaria"),
-				Map.entry(BF, "Burkina Faso"),
-				Map.entry(BI, "Burundi"),
-				Map.entry(CV, "Cabo Verde"),
-				Map.entry(KH, "Cambodia"),
-				Map.entry(CM, "Cameroon"),
-				Map.entry(CA, "Canada"),
-				Map.entry(KY, "Cayman Islands"),
-				Map.entry(CF, "Central African Republic"),
-				Map.entry(TD, "Chad"),
-				Map.entry(CL, "Chile"),
-				Map.entry(CN, "China"),
-				Map.entry(CX, "Christmas Island"),
-				Map.entry(CC, "Cocos (Keeling) Islands"),
-				Map.entry(CO, "Colombia"),
-				Map.entry(KM, "Comoros"),
-				Map.entry(CD, "Congo (The Democratic Republic of the)"),
-				Map.entry(CG, "Congo (The Republic of the)"),
-				Map.entry(CK, "Cook Islands"),
-				Map.entry(CR, "Costa Rica"),
-				Map.entry(CI, "Côte d'Ivoire (Ivory Coast)"),
-				Map.entry(HR, "Croatia"),
-				Map.entry(CU, "Cuba"),
-				Map.entry(CW, "Curaçao"),
-				Map.entry(CY, "Cyprus"),
-				Map.entry(CZ, "Czechia"),
-				Map.entry(DK, "Denmark"),
-				Map.entry(DJ, "Djibouti"),
-				Map.entry(DM, "Dominica"),
-				Map.entry(DO, "Dominican Republic"),
-				Map.entry(EC, "Ecuador"),
-				Map.entry(EG, "Egypt"),
-				Map.entry(SV, "El Salvador"),
-				Map.entry(GQ, "Equatorial Guinea"),
-				Map.entry(ER, "Eritrea"),
-				Map.entry(EE, "Estonia"),
-				Map.entry(SZ, "Eswatini"),
-				Map.entry(ET, "Ethiopia"),
-				Map.entry(FK, "Falkland Islands (Malvinas)"),
-				Map.entry(FO, "Faroe Islands"),
-				Map.entry(FJ, "Fiji"),
-				Map.entry(FI, "Finland"),
-				Map.entry(FR, "France"),
-				Map.entry(GF, "French Guiana"),
-				Map.entry(PF, "French Polynesia"),
-				Map.entry(TF, "French Southern Territories"),
-				Map.entry(GA, "Gabon"),
-				Map.entry(GM, "Gambia"),
-				Map.entry(GE, "Georgia"),
-				Map.entry(DE, "Germany"),
-				Map.entry(GH, "Ghana"),
-				Map.entry(GI, "Gibraltar"),
-				Map.entry(GR, "Greece"),
-				Map.entry(GL, "Greenland"),
-				Map.entry(GD, "Grenada"),
-				Map.entry(GP, "Guadeloupe"),
-				Map.entry(GU, "Guam"),
-				Map.entry(GT, "Guatemala"),
-				Map.entry(GG, "Guernsey"),
-				Map.entry(GN, "Guinea"),
-				Map.entry(GW, "Guinea-Bissau"),
-				Map.entry(GY, "Guyana"),
-				Map.entry(HT, "Haiti"),
-				Map.entry(HM, "Heard Island and McDonald Islands"),
-				Map.entry(VA, "Holy See (Vatican)"),
-				Map.entry(HN, "Honduras"),
-				Map.entry(HK, "Hong Kong"),
-				Map.entry(HU, "Hungary"),
-				Map.entry(IS, "Iceland"),
-				Map.entry(IN, "India"),
-				Map.entry(ID, "Indonesia"),
-				Map.entry(IR, "Iran"),
-				Map.entry(IQ, "Iraq"),
-				Map.entry(IE, "Ireland"),
-				Map.entry(IM, "Isle of Man"),
-				Map.entry(IL, "Israel"),
-				Map.entry(IT, "Italy"),
-				Map.entry(JM, "Jamaica"),
-				Map.entry(JP, "Japan"),
-				Map.entry(JE, "Jersey"),
-				Map.entry(JO, "Jordan"),
-				Map.entry(KZ, "Kazakhstan"),
-				Map.entry(KE, "Kenya"),
-				Map.entry(KI, "Kiribati"),
-				Map.entry(KP, "North Korea"),
-				Map.entry(KR, "South Korea"),
-				Map.entry(KW, "Kuwait"),
-				Map.entry(KG, "Kyrgyzstan"),
-				Map.entry(LA, "Lao"),
-				Map.entry(LV, "Latvia"),
-				Map.entry(LB, "Lebanon"),
-				Map.entry(LS, "Lesotho"),
-				Map.entry(LR, "Liberia"),
-				Map.entry(LY, "Libya"),
-				Map.entry(LI, "Liechtenstein"),
-				Map.entry(LT, "Lithuania"),
-				Map.entry(LU, "Luxembourg"),
-				Map.entry(MO, "Macao"),
-				Map.entry(MK, "North Macedonia"),
-				Map.entry(MG, "Madagascar"),
-				Map.entry(MW, "Malawi"),
-				Map.entry(MY, "Malaysia"),
-				Map.entry(MV, "Maldives"),
-				Map.entry(ML, "Mali"),
-				Map.entry(MT, "Malta"),
-				Map.entry(MH, "Marshall Islands"),
-				Map.entry(MQ, "Martinique"),
-				Map.entry(MR, "Mauritania"),
-				Map.entry(MU, "Mauritius"),
-				Map.entry(YT, "Mayotte"),
-				Map.entry(MX, "Mexico"),
-				Map.entry(FM, "Micronesia"),
-				Map.entry(MD, "Moldova"),
-				Map.entry(MC, "Monaco"),
-				Map.entry(MN, "Mongolia"),
-				Map.entry(ME, "Montenegro"),
-				Map.entry(MS, "Montserrat"),
-				Map.entry(MA, "Morocco"),
-				Map.entry(MZ, "Mozambique"),
-				Map.entry(MM, "Myanmar"),
-				Map.entry(NA, "Namibia"),
-				Map.entry(NR, "Nauru"),
-				Map.entry(NP, "Nepal"),
-				Map.entry(NL, "Netherlands"),
-				Map.entry(NC, "New Caledonia"),
-				Map.entry(NZ, "New Zealand"),
-				Map.entry(NI, "Nicaragua"),
-				Map.entry(NE, "Niger"),
-				Map.entry(NG, "Nigeria"),
-				Map.entry(NU, "Niue"),
-				Map.entry(NF, "Norfolk Island"),
-				Map.entry(MP, "Northern Mariana Islands"),
-				Map.entry(NO, "Norway"),
-				Map.entry(OM, "Oman"),
-				Map.entry(PK, "Pakistan"),
-				Map.entry(PW, "Palau"),
-				Map.entry(PS, "Palestine"),
-				Map.entry(PA, "Panama"),
-				Map.entry(PG, "Papua New Guinea"),
-				Map.entry(PY, "Paraguay"),
-				Map.entry(PE, "Peru"),
-				Map.entry(PH, "Philippines"),
-				Map.entry(PN, "Pitcairn"),
-				Map.entry(PL, "Poland"),
-				Map.entry(PT, "Portugal"),
-				Map.entry(PR, "Puerto Rico"),
-				Map.entry(QA, "Qatar"),
-				Map.entry(RE, "Réunion"),
-				Map.entry(RO, "Romania"),
-				Map.entry(RU, "Russia"),
-				Map.entry(RW, "Rwanda"),
-				Map.entry(BL, "Saint Barthélemy"),
-				Map.entry(SH, "Saint Helena, Ascension and Tristan da Cunha"),
-				Map.entry(KN, "Saint Kitts and Nevis"),
-				Map.entry(LC, "Saint Lucia"),
-				Map.entry(MF, "Saint Martin (French part)"),
-				Map.entry(PM, "Saint Pierre and Miquelon"),
-				Map.entry(VC, "Saint Vincent and the Grenadines"),
-				Map.entry(WS, "Samoa"),
-				Map.entry(SM, "San Marino"),
-				Map.entry(ST, "Sao Tome and Principe"),
-				Map.entry(SA, "Saudi Arabia"),
-				Map.entry(SN, "Senegal"),
-				Map.entry(RS, "Serbia"),
-				Map.entry(SC, "Seychelles"),
-				Map.entry(SL, "Sierra Leone"),
-				Map.entry(SG, "Singapore"),
-				Map.entry(SX, "Sint Maarten (Dutch part)"),
-				Map.entry(SK, "Slovakia"),
-				Map.entry(SI, "Slovenia"),
-				Map.entry(SB, "Solomon Islands"),
-				Map.entry(SO, "Somalia"),
-				Map.entry(ZA, "South Africa"),
-				Map.entry(GS, "South Georgia and the South Sandwich Islands"),
-				Map.entry(SS, "South Sudan"),
-				Map.entry(ES, "Spain"),
-				Map.entry(LK, "Sri Lanka"),
-				Map.entry(SD, "Sudan"),
-				Map.entry(SR, "Suriname"),
-				Map.entry(SJ, "Svalbard and Jan Mayen"),
-				Map.entry(SE, "Sweden"),
-				Map.entry(CH, "Switzerland"),
-				Map.entry(SY, "Syria"),
-				Map.entry(TW, "Taiwan"),
-				Map.entry(TJ, "Tajikistan"),
-				Map.entry(TZ, "Tanzania"),
-				Map.entry(TH, "Thailand"),
-				Map.entry(TL, "Timor-Leste"),
-				Map.entry(TG, "Togo"),
-				Map.entry(TK, "Tokelau"),
-				Map.entry(TO, "Tonga"),
-				Map.entry(TT, "Trinidad and Tobago"),
-				Map.entry(TN, "Tunisia"),
-				Map.entry(TR, "Turkey"),
-				Map.entry(TM, "Turkmenistan"),
-				Map.entry(TC, "Turks and Caicos Islands"),
-				Map.entry(TV, "Tuvalu"),
-				Map.entry(UG, "Uganda"),
-				Map.entry(UA, "Ukraine"),
-				Map.entry(AE, "United Arab Emirates"),
-				Map.entry(GB, "United Kingdom of Great Britain and Northern Ireland"),
-				Map.entry(UM, "United States Minor Outlying Islands"),
-				Map.entry(US, "United States of America"),
-				Map.entry(UY, "Uruguay"),
-				Map.entry(UZ, "Uzbekistan"),
-				Map.entry(VU, "Vanuatu"),
-				Map.entry(VE, "Venezuela"),
-				Map.entry(VN, "Viet Nam"),
-				Map.entry(VG, "Virgin Islands (British)"),
-				Map.entry(VI, "Virgin Islands (U.S.)"),
-				Map.entry(WF, "Wallis and Futuna"),
-				Map.entry(EH, "Western Sahara"),
-				Map.entry(YE, "Yemen"),
-				Map.entry(ZM, "Zambia"),
-				Map.entry(ZW, "Zimbabwe")
-			);
+		MAP_COUNTRY_FULL_NAME.put(AF, "Afghanistan");
+		MAP_COUNTRY_FULL_NAME.put(AX, "Åland Islands");
+		MAP_COUNTRY_FULL_NAME.put(AL, "Albania");
+		MAP_COUNTRY_FULL_NAME.put(DZ, "Algeria");
+		MAP_COUNTRY_FULL_NAME.put(AS, "American Samoa");
+		MAP_COUNTRY_FULL_NAME.put(AD, "Andorra");
+		MAP_COUNTRY_FULL_NAME.put(AO, "Angola");
+		MAP_COUNTRY_FULL_NAME.put(AI, "Anguilla");
+		MAP_COUNTRY_FULL_NAME.put(AQ, "Antarctica");
+		MAP_COUNTRY_FULL_NAME.put(AG, "Antigua and Barbuda");
+		MAP_COUNTRY_FULL_NAME.put(AR, "Argentina");
+		MAP_COUNTRY_FULL_NAME.put(AM, "Armenia");
+		MAP_COUNTRY_FULL_NAME.put(AW, "Aruba");
+		MAP_COUNTRY_FULL_NAME.put(AU, "Australia");
+		MAP_COUNTRY_FULL_NAME.put(AT, "Austria");
+		MAP_COUNTRY_FULL_NAME.put(AZ, "Azerbaijan");
+		MAP_COUNTRY_FULL_NAME.put(BS, "Bahamas");
+		MAP_COUNTRY_FULL_NAME.put(BH, "Bahrain");
+		MAP_COUNTRY_FULL_NAME.put(BD, "Bangladesh");
+		MAP_COUNTRY_FULL_NAME.put(BB, "Barbados");
+		MAP_COUNTRY_FULL_NAME.put(BY, "Belarus");
+		MAP_COUNTRY_FULL_NAME.put(BE, "Belgium");
+		MAP_COUNTRY_FULL_NAME.put(BZ, "Belize");
+		MAP_COUNTRY_FULL_NAME.put(BJ, "Benin");
+		MAP_COUNTRY_FULL_NAME.put(BM, "Bermuda");
+		MAP_COUNTRY_FULL_NAME.put(BT, "Bhutan");
+		MAP_COUNTRY_FULL_NAME.put(BO, "Bolivia");
+		MAP_COUNTRY_FULL_NAME.put(BQ, "Bonaire, Sint Eustatius and Saba");
+		MAP_COUNTRY_FULL_NAME.put(BA, "Bosnia and Herzegovina");
+		MAP_COUNTRY_FULL_NAME.put(BW, "Botswana");
+		MAP_COUNTRY_FULL_NAME.put(BV, "Bouvet Island");
+		MAP_COUNTRY_FULL_NAME.put(BR, "Brazil");
+		MAP_COUNTRY_FULL_NAME.put(IO, "British Indian Ocean Territory");
+		MAP_COUNTRY_FULL_NAME.put(BN, "Brunei Darussalam");
+		MAP_COUNTRY_FULL_NAME.put(BG, "Bulgaria");
+		MAP_COUNTRY_FULL_NAME.put(BF, "Burkina Faso");
+		MAP_COUNTRY_FULL_NAME.put(BI, "Burundi");
+		MAP_COUNTRY_FULL_NAME.put(CV, "Cabo Verde");
+		MAP_COUNTRY_FULL_NAME.put(KH, "Cambodia");
+		MAP_COUNTRY_FULL_NAME.put(CM, "Cameroon");
+		MAP_COUNTRY_FULL_NAME.put(CA, "Canada");
+		MAP_COUNTRY_FULL_NAME.put(KY, "Cayman Islands");
+		MAP_COUNTRY_FULL_NAME.put(CF, "Central African Republic");
+		MAP_COUNTRY_FULL_NAME.put(TD, "Chad");
+		MAP_COUNTRY_FULL_NAME.put(CL, "Chile");
+		MAP_COUNTRY_FULL_NAME.put(CN, "China");
+		MAP_COUNTRY_FULL_NAME.put(CX, "Christmas Island");
+		MAP_COUNTRY_FULL_NAME.put(CC, "Cocos (Keeling) Islands");
+		MAP_COUNTRY_FULL_NAME.put(CO, "Colombia");
+		MAP_COUNTRY_FULL_NAME.put(KM, "Comoros");
+		MAP_COUNTRY_FULL_NAME.put(CD, "Congo (The Democratic Republic of the)");
+		MAP_COUNTRY_FULL_NAME.put(CG, "Congo (The Republic of the)");
+		MAP_COUNTRY_FULL_NAME.put(CK, "Cook Islands");
+		MAP_COUNTRY_FULL_NAME.put(CR, "Costa Rica");
+		MAP_COUNTRY_FULL_NAME.put(CI, "Côte d'Ivoire (Ivory Coast)");
+		MAP_COUNTRY_FULL_NAME.put(HR, "Croatia");
+		MAP_COUNTRY_FULL_NAME.put(CU, "Cuba");
+		MAP_COUNTRY_FULL_NAME.put(CW, "Curaçao");
+		MAP_COUNTRY_FULL_NAME.put(CY, "Cyprus");
+		MAP_COUNTRY_FULL_NAME.put(CZ, "Czechia");
+		MAP_COUNTRY_FULL_NAME.put(DK, "Denmark");
+		MAP_COUNTRY_FULL_NAME.put(DJ, "Djibouti");
+		MAP_COUNTRY_FULL_NAME.put(DM, "Dominica");
+		MAP_COUNTRY_FULL_NAME.put(DO, "Dominican Republic");
+		MAP_COUNTRY_FULL_NAME.put(EC, "Ecuador");
+		MAP_COUNTRY_FULL_NAME.put(EG, "Egypt");
+		MAP_COUNTRY_FULL_NAME.put(SV, "El Salvador");
+		MAP_COUNTRY_FULL_NAME.put(GQ, "Equatorial Guinea");
+		MAP_COUNTRY_FULL_NAME.put(ER, "Eritrea");
+		MAP_COUNTRY_FULL_NAME.put(EE, "Estonia");
+		MAP_COUNTRY_FULL_NAME.put(SZ, "Eswatini");
+		MAP_COUNTRY_FULL_NAME.put(ET, "Ethiopia");
+		MAP_COUNTRY_FULL_NAME.put(FK, "Falkland Islands (Malvinas)");
+		MAP_COUNTRY_FULL_NAME.put(FO, "Faroe Islands");
+		MAP_COUNTRY_FULL_NAME.put(FJ, "Fiji");
+		MAP_COUNTRY_FULL_NAME.put(FI, "Finland");
+		MAP_COUNTRY_FULL_NAME.put(FR, "France");
+		MAP_COUNTRY_FULL_NAME.put(GF, "French Guiana");
+		MAP_COUNTRY_FULL_NAME.put(PF, "French Polynesia");
+		MAP_COUNTRY_FULL_NAME.put(TF, "French Southern Territories");
+		MAP_COUNTRY_FULL_NAME.put(GA, "Gabon");
+		MAP_COUNTRY_FULL_NAME.put(GM, "Gambia");
+		MAP_COUNTRY_FULL_NAME.put(GE, "Georgia");
+		MAP_COUNTRY_FULL_NAME.put(DE, "Germany");
+		MAP_COUNTRY_FULL_NAME.put(GH, "Ghana");
+		MAP_COUNTRY_FULL_NAME.put(GI, "Gibraltar");
+		MAP_COUNTRY_FULL_NAME.put(GR, "Greece");
+		MAP_COUNTRY_FULL_NAME.put(GL, "Greenland");
+		MAP_COUNTRY_FULL_NAME.put(GD, "Grenada");
+		MAP_COUNTRY_FULL_NAME.put(GP, "Guadeloupe");
+		MAP_COUNTRY_FULL_NAME.put(GU, "Guam");
+		MAP_COUNTRY_FULL_NAME.put(GT, "Guatemala");
+		MAP_COUNTRY_FULL_NAME.put(GG, "Guernsey");
+		MAP_COUNTRY_FULL_NAME.put(GN, "Guinea");
+		MAP_COUNTRY_FULL_NAME.put(GW, "Guinea-Bissau");
+		MAP_COUNTRY_FULL_NAME.put(GY, "Guyana");
+		MAP_COUNTRY_FULL_NAME.put(HT, "Haiti");
+		MAP_COUNTRY_FULL_NAME.put(HM, "Heard Island and McDonald Islands");
+		MAP_COUNTRY_FULL_NAME.put(VA, "Holy See (Vatican)");
+		MAP_COUNTRY_FULL_NAME.put(HN, "Honduras");
+		MAP_COUNTRY_FULL_NAME.put(HK, "Hong Kong");
+		MAP_COUNTRY_FULL_NAME.put(HU, "Hungary");
+		MAP_COUNTRY_FULL_NAME.put(IS, "Iceland");
+		MAP_COUNTRY_FULL_NAME.put(IN, "India");
+		MAP_COUNTRY_FULL_NAME.put(ID, "Indonesia");
+		MAP_COUNTRY_FULL_NAME.put(IR, "Iran");
+		MAP_COUNTRY_FULL_NAME.put(IQ, "Iraq");
+		MAP_COUNTRY_FULL_NAME.put(IE, "Ireland");
+		MAP_COUNTRY_FULL_NAME.put(IM, "Isle of Man");
+		MAP_COUNTRY_FULL_NAME.put(IL, "Israel");
+		MAP_COUNTRY_FULL_NAME.put(IT, "Italy");
+		MAP_COUNTRY_FULL_NAME.put(JM, "Jamaica");
+		MAP_COUNTRY_FULL_NAME.put(JP, "Japan");
+		MAP_COUNTRY_FULL_NAME.put(JE, "Jersey");
+		MAP_COUNTRY_FULL_NAME.put(JO, "Jordan");
+		MAP_COUNTRY_FULL_NAME.put(KZ, "Kazakhstan");
+		MAP_COUNTRY_FULL_NAME.put(KE, "Kenya");
+		MAP_COUNTRY_FULL_NAME.put(KI, "Kiribati");
+		MAP_COUNTRY_FULL_NAME.put(KP, "North Korea");
+		MAP_COUNTRY_FULL_NAME.put(KR, "South Korea");
+		MAP_COUNTRY_FULL_NAME.put(KW, "Kuwait");
+		MAP_COUNTRY_FULL_NAME.put(KG, "Kyrgyzstan");
+		MAP_COUNTRY_FULL_NAME.put(LA, "Lao");
+		MAP_COUNTRY_FULL_NAME.put(LV, "Latvia");
+		MAP_COUNTRY_FULL_NAME.put(LB, "Lebanon");
+		MAP_COUNTRY_FULL_NAME.put(LS, "Lesotho");
+		MAP_COUNTRY_FULL_NAME.put(LR, "Liberia");
+		MAP_COUNTRY_FULL_NAME.put(LY, "Libya");
+		MAP_COUNTRY_FULL_NAME.put(LI, "Liechtenstein");
+		MAP_COUNTRY_FULL_NAME.put(LT, "Lithuania");
+		MAP_COUNTRY_FULL_NAME.put(LU, "Luxembourg");
+		MAP_COUNTRY_FULL_NAME.put(MO, "Macao");
+		MAP_COUNTRY_FULL_NAME.put(MK, "North Macedonia");
+		MAP_COUNTRY_FULL_NAME.put(MG, "Madagascar");
+		MAP_COUNTRY_FULL_NAME.put(MW, "Malawi");
+		MAP_COUNTRY_FULL_NAME.put(MY, "Malaysia");
+		MAP_COUNTRY_FULL_NAME.put(MV, "Maldives");
+		MAP_COUNTRY_FULL_NAME.put(ML, "Mali");
+		MAP_COUNTRY_FULL_NAME.put(MT, "Malta");
+		MAP_COUNTRY_FULL_NAME.put(MH, "Marshall Islands");
+		MAP_COUNTRY_FULL_NAME.put(MQ, "Martinique");
+		MAP_COUNTRY_FULL_NAME.put(MR, "Mauritania");
+		MAP_COUNTRY_FULL_NAME.put(MU, "Mauritius");
+		MAP_COUNTRY_FULL_NAME.put(YT, "Mayotte");
+		MAP_COUNTRY_FULL_NAME.put(MX, "Mexico");
+		MAP_COUNTRY_FULL_NAME.put(FM, "Micronesia");
+		MAP_COUNTRY_FULL_NAME.put(MD, "Moldova");
+		MAP_COUNTRY_FULL_NAME.put(MC, "Monaco");
+		MAP_COUNTRY_FULL_NAME.put(MN, "Mongolia");
+		MAP_COUNTRY_FULL_NAME.put(ME, "Montenegro");
+		MAP_COUNTRY_FULL_NAME.put(MS, "Montserrat");
+		MAP_COUNTRY_FULL_NAME.put(MA, "Morocco");
+		MAP_COUNTRY_FULL_NAME.put(MZ, "Mozambique");
+		MAP_COUNTRY_FULL_NAME.put(MM, "Myanmar");
+		MAP_COUNTRY_FULL_NAME.put(NA, "Namibia");
+		MAP_COUNTRY_FULL_NAME.put(NR, "Nauru");
+		MAP_COUNTRY_FULL_NAME.put(NP, "Nepal");
+		MAP_COUNTRY_FULL_NAME.put(NL, "Netherlands");
+		MAP_COUNTRY_FULL_NAME.put(NC, "New Caledonia");
+		MAP_COUNTRY_FULL_NAME.put(NZ, "New Zealand");
+		MAP_COUNTRY_FULL_NAME.put(NI, "Nicaragua");
+		MAP_COUNTRY_FULL_NAME.put(NE, "Niger");
+		MAP_COUNTRY_FULL_NAME.put(NG, "Nigeria");
+		MAP_COUNTRY_FULL_NAME.put(NU, "Niue");
+		MAP_COUNTRY_FULL_NAME.put(NF, "Norfolk Island");
+		MAP_COUNTRY_FULL_NAME.put(MP, "Northern Mariana Islands");
+		MAP_COUNTRY_FULL_NAME.put(NO, "Norway");
+		MAP_COUNTRY_FULL_NAME.put(OM, "Oman");
+		MAP_COUNTRY_FULL_NAME.put(PK, "Pakistan");
+		MAP_COUNTRY_FULL_NAME.put(PW, "Palau");
+		MAP_COUNTRY_FULL_NAME.put(PS, "Palestine");
+		MAP_COUNTRY_FULL_NAME.put(PA, "Panama");
+		MAP_COUNTRY_FULL_NAME.put(PG, "Papua New Guinea");
+		MAP_COUNTRY_FULL_NAME.put(PY, "Paraguay");
+		MAP_COUNTRY_FULL_NAME.put(PE, "Peru");
+		MAP_COUNTRY_FULL_NAME.put(PH, "Philippines");
+		MAP_COUNTRY_FULL_NAME.put(PN, "Pitcairn");
+		MAP_COUNTRY_FULL_NAME.put(PL, "Poland");
+		MAP_COUNTRY_FULL_NAME.put(PT, "Portugal");
+		MAP_COUNTRY_FULL_NAME.put(PR, "Puerto Rico");
+		MAP_COUNTRY_FULL_NAME.put(QA, "Qatar");
+		MAP_COUNTRY_FULL_NAME.put(RE, "Réunion");
+		MAP_COUNTRY_FULL_NAME.put(RO, "Romania");
+		MAP_COUNTRY_FULL_NAME.put(RU, "Russia");
+		MAP_COUNTRY_FULL_NAME.put(RW, "Rwanda");
+		MAP_COUNTRY_FULL_NAME.put(BL, "Saint Barthélemy");
+		MAP_COUNTRY_FULL_NAME.put(SH, "Saint Helena, Ascension and Tristan da Cunha");
+		MAP_COUNTRY_FULL_NAME.put(KN, "Saint Kitts and Nevis");
+		MAP_COUNTRY_FULL_NAME.put(LC, "Saint Lucia");
+		MAP_COUNTRY_FULL_NAME.put(MF, "Saint Martin (French part)");
+		MAP_COUNTRY_FULL_NAME.put(PM, "Saint Pierre and Miquelon");
+		MAP_COUNTRY_FULL_NAME.put(VC, "Saint Vincent and the Grenadines");
+		MAP_COUNTRY_FULL_NAME.put(WS, "Samoa");
+		MAP_COUNTRY_FULL_NAME.put(SM, "San Marino");
+		MAP_COUNTRY_FULL_NAME.put(ST, "Sao Tome and Principe");
+		MAP_COUNTRY_FULL_NAME.put(SA, "Saudi Arabia");
+		MAP_COUNTRY_FULL_NAME.put(SN, "Senegal");
+		MAP_COUNTRY_FULL_NAME.put(RS, "Serbia");
+		MAP_COUNTRY_FULL_NAME.put(SC, "Seychelles");
+		MAP_COUNTRY_FULL_NAME.put(SL, "Sierra Leone");
+		MAP_COUNTRY_FULL_NAME.put(SG, "Singapore");
+		MAP_COUNTRY_FULL_NAME.put(SX, "Sint Maarten (Dutch part)");
+		MAP_COUNTRY_FULL_NAME.put(SK, "Slovakia");
+		MAP_COUNTRY_FULL_NAME.put(SI, "Slovenia");
+		MAP_COUNTRY_FULL_NAME.put(SB, "Solomon Islands");
+		MAP_COUNTRY_FULL_NAME.put(SO, "Somalia");
+		MAP_COUNTRY_FULL_NAME.put(ZA, "South Africa");
+		MAP_COUNTRY_FULL_NAME.put(GS, "South Georgia and the South Sandwich Islands");
+		MAP_COUNTRY_FULL_NAME.put(SS, "South Sudan");
+		MAP_COUNTRY_FULL_NAME.put(ES, "Spain");
+		MAP_COUNTRY_FULL_NAME.put(LK, "Sri Lanka");
+		MAP_COUNTRY_FULL_NAME.put(SD, "Sudan");
+		MAP_COUNTRY_FULL_NAME.put(SR, "Suriname");
+		MAP_COUNTRY_FULL_NAME.put(SJ, "Svalbard and Jan Mayen");
+		MAP_COUNTRY_FULL_NAME.put(SE, "Sweden");
+		MAP_COUNTRY_FULL_NAME.put(CH, "Switzerland");
+		MAP_COUNTRY_FULL_NAME.put(SY, "Syria");
+		MAP_COUNTRY_FULL_NAME.put(TW, "Taiwan");
+		MAP_COUNTRY_FULL_NAME.put(TJ, "Tajikistan");
+		MAP_COUNTRY_FULL_NAME.put(TZ, "Tanzania");
+		MAP_COUNTRY_FULL_NAME.put(TH, "Thailand");
+		MAP_COUNTRY_FULL_NAME.put(TL, "Timor-Leste");
+		MAP_COUNTRY_FULL_NAME.put(TG, "Togo");
+		MAP_COUNTRY_FULL_NAME.put(TK, "Tokelau");
+		MAP_COUNTRY_FULL_NAME.put(TO, "Tonga");
+		MAP_COUNTRY_FULL_NAME.put(TT, "Trinidad and Tobago");
+		MAP_COUNTRY_FULL_NAME.put(TN, "Tunisia");
+		MAP_COUNTRY_FULL_NAME.put(TR, "Turkey");
+		MAP_COUNTRY_FULL_NAME.put(TM, "Turkmenistan");
+		MAP_COUNTRY_FULL_NAME.put(TC, "Turks and Caicos Islands");
+		MAP_COUNTRY_FULL_NAME.put(TV, "Tuvalu");
+		MAP_COUNTRY_FULL_NAME.put(UG, "Uganda");
+		MAP_COUNTRY_FULL_NAME.put(UA, "Ukraine");
+		MAP_COUNTRY_FULL_NAME.put(AE, "United Arab Emirates");
+		MAP_COUNTRY_FULL_NAME.put(GB, "United Kingdom of Great Britain and Northern Ireland");
+		MAP_COUNTRY_FULL_NAME.put(UM, "United States Minor Outlying Islands");
+		MAP_COUNTRY_FULL_NAME.put(US, "United States of America");
+		MAP_COUNTRY_FULL_NAME.put(UY, "Uruguay");
+		MAP_COUNTRY_FULL_NAME.put(UZ, "Uzbekistan");
+		MAP_COUNTRY_FULL_NAME.put(VU, "Vanuatu");
+		MAP_COUNTRY_FULL_NAME.put(VE, "Venezuela");
+		MAP_COUNTRY_FULL_NAME.put(VN, "Viet Nam");
+		MAP_COUNTRY_FULL_NAME.put(VG, "Virgin Islands (British)");
+		MAP_COUNTRY_FULL_NAME.put(VI, "Virgin Islands (U.S.)");
+		MAP_COUNTRY_FULL_NAME.put(WF, "Wallis and Futuna");
+		MAP_COUNTRY_FULL_NAME.put(EH, "Western Sahara");
+		MAP_COUNTRY_FULL_NAME.put(YE, "Yemen");
+		MAP_COUNTRY_FULL_NAME.put(ZM, "Zambia");
+		MAP_COUNTRY_FULL_NAME.put(ZW, "Zimbabwe");
 	}
-	// @formatter:on
 
 	private static final Map<CountryEnum, String> MAP_COUNTRY_OFFICIAL_NAME;
 	// @formatter:off
