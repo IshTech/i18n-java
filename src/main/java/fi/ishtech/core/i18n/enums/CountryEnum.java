@@ -1,9 +1,8 @@
 package fi.ishtech.core.i18n.enums;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * {@link Enum} for Country.<br>
@@ -263,9 +262,12 @@ public enum CountryEnum {
 	ZM,
 	ZW;
 
-	private final static List<String> NAMES_LIST = Arrays.stream(values())
-			.map(Enum::name)
-			.collect(Collectors.toUnmodifiableList());
+	private final static List<String> NAMES_LIST = new ArrayList<String>(0);
+	static {
+		for(CountryEnum c : values()) {
+			NAMES_LIST.add(c.name());
+		}
+	}
 
 	/**
 	 * Alias for valueOf
@@ -522,9 +524,10 @@ public enum CountryEnum {
 		return isEu(this);
 	}
 
+	private static final Map<CountryEnum, String> MAP_COUNTRY_FULL_NAME;
 	// @formatter:off
-	private static final Map<CountryEnum, String> MAP_COUNTRY_FULL_NAME =
-			Map.ofEntries(
+	static {
+		MAP_COUNTRY_FULL_NAME = Map.ofEntries(
 				Map.entry(AF, "Afghanistan"),
 				Map.entry(AX, "Åland Islands"),
 				Map.entry(AL, "Albania"),
@@ -775,11 +778,13 @@ public enum CountryEnum {
 				Map.entry(ZM, "Zambia"),
 				Map.entry(ZW, "Zimbabwe")
 			);
+	}
 	// @formatter:on
 
+	private static final Map<CountryEnum, String> MAP_COUNTRY_OFFICIAL_NAME;
 	// @formatter:off
-	private static final Map<CountryEnum, String> MAP_COUNTRY_OFFICIAL_NAME =
-			Map.ofEntries(
+	static {
+		MAP_COUNTRY_OFFICIAL_NAME = Map.ofEntries(
 				Map.entry(AF, "The Islamic Republic of Afghanistan"),
 				Map.entry(AX, "Åland"),
 				Map.entry(AL, "The Republic of Albania"),
@@ -1030,11 +1035,13 @@ public enum CountryEnum {
 				Map.entry(ZM, "The Republic of Zambia"),
 				Map.entry(ZW, "The Republic of Zimbabwe")
 			);
+	}
 	// @formatter:on
 
+	private static final Map<CountryEnum, String> MAP_COUNTRY_ALPHA_3;
 	// @formatter:off
-	private static final Map<CountryEnum, String> MAP_COUNTRY_ALPHA_3 =
-			Map.ofEntries(
+	static {
+		MAP_COUNTRY_ALPHA_3 = Map.ofEntries(
 				Map.entry(AF, "AFG"),
 				Map.entry(AX, "ALA"),
 				Map.entry(AL, "ALB"),
@@ -1285,11 +1292,13 @@ public enum CountryEnum {
 				Map.entry(ZM, "ZMB"),
 				Map.entry(ZW, "ZWE")
 			);
+	}
 	// @formatter:on
 
+	private static final Map<CountryEnum, String> MAP_COUNTRY_NUMERIC_3;
 	// @formatter:off
-	private static final Map<CountryEnum, String> MAP_COUNTRY_NUMERIC_3 =
-			Map.ofEntries(
+	static {
+		MAP_COUNTRY_NUMERIC_3 = Map.ofEntries(
 				Map.entry(AF, "004"),
 				Map.entry(AX, "248"),
 				Map.entry(AL, "008"),
@@ -1540,11 +1549,13 @@ public enum CountryEnum {
 				Map.entry(ZM, "894"),
 				Map.entry(ZW, "716")
 			);
+	}
 	// @formatter:on
 
+	private static final Map<CountryEnum, List<String>> MAP_CC_TLD;
 	// @formatter:off
-	private static final Map<CountryEnum, List<String>> MAP_CC_TLD =
-			Map.ofEntries(
+	static {
+		MAP_CC_TLD = Map.ofEntries(
 				Map.entry(AF, List.of(".af")),
 				Map.entry(AX, List.of(".ax")),
 				Map.entry(AL, List.of(".al")),
@@ -1791,10 +1802,13 @@ public enum CountryEnum {
 				Map.entry(ZM, List.of(".zm")),
 				Map.entry(ZW, List.of(".zw"))
 			);
+	}
 	// @formatter:on
 
 	// @formatter:off
-	private static final List<CountryEnum> LIST_EU = List.of(
+	private static final List<CountryEnum> LIST_EU;
+	static {
+		LIST_EU = List.of(
 			AT,
 			BE,
 			BG,
@@ -1823,6 +1837,7 @@ public enum CountryEnum {
 			ES,
 			SE
 		);
+	}
 	// @formatter:on
 
 }

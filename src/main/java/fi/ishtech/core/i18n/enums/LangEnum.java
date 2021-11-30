@@ -197,11 +197,10 @@ public enum LangEnum {
 	zh,
 	zu;
 
-	// @formatter:off
-	private final static List<String> NAMES_LIST = Arrays.stream(values())
-			.map(Enum::name)
-			.collect(Collectors.toList());
-	// @formatter:on
+	private final static List<String> NAMES_LIST;
+	static {
+		NAMES_LIST = Arrays.stream(values()).map(Enum::name).collect(Collectors.toList());
+	}
 
 	/**
 	 * Alias for valueOf
@@ -397,9 +396,10 @@ public enum LangEnum {
 		return fullName(en, this);
 	}
 
+	private static final Map<LangEnum, Map<LangEnum, String>> MAP_LANG_FULL_NAME;
 	// @formatter:off
-	private static final Map<LangEnum, Map<LangEnum, String>> MAP_LANG_FULL_NAME =
-			Map.ofEntries(
+	static {
+		MAP_LANG_FULL_NAME = Map.ofEntries(
 				Map.entry(en, Map.ofEntries(
 					Map.entry(aa , "Afar"),
 					Map.entry(ab , "Abkhazian"),
@@ -593,6 +593,7 @@ public enum LangEnum {
 					Map.entry(sv, "Ruotsi")
 				))
 		);
+	}
 	// @formatter:on
 
 }
