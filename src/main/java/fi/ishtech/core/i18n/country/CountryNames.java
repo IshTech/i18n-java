@@ -12,7 +12,7 @@ import fi.ishtech.core.i18n.enums.LangEnum;
  *
  * @author Muneer Ahmed Syed
  */
-public abstract class CountryName {
+public abstract class CountryNames {
 
 	public static final Map<CountryEnum, String> byLang(LangEnum lang) {
 		if (lang == null) {
@@ -56,8 +56,8 @@ public abstract class CountryName {
 		Map<LangEnum, Map<CountryEnum, String>> tmpLangMapCountryFullName = new HashMap<LangEnum, Map<CountryEnum, String>>(
 				2);
 
-		tmpLangMapCountryFullName.put(LangEnum.en, CountryNameEn.fullNames());
-		tmpLangMapCountryFullName.put(LangEnum.fi, CountryNameFi.fullNames());
+		tmpLangMapCountryFullName.put(LangEnum.en, CountryNamesEn.fullNames());
+		tmpLangMapCountryFullName.put(LangEnum.fi, CountryNamesFi.fullNames());
 
 		MAP_LANG_COUNTRY_FULL_NAMES = Collections.unmodifiableMap(tmpLangMapCountryFullName);
 

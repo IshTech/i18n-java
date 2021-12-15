@@ -10,7 +10,7 @@ import fi.ishtech.core.i18n.enums.CountryEnum;
  *
  * @author Muneer Ahmed Syed
  */
-public abstract class CountryNameFi {
+public abstract class CountryNamesFi {
 
 	public static final Map<CountryEnum, String> fullNames() {
 		return MAP_COUNTRY_FULL_NAMES_FI;
