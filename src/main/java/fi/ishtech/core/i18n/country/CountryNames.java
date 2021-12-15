@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import fi.ishtech.core.i18n.enums.CountryEnum;
 import fi.ishtech.core.i18n.enums.LangEnum;
@@ -41,14 +42,7 @@ public abstract class CountryNames {
 			return null;
 		}
 
-		Map<LangEnum, Map<CountryEnum, String>> tmpLangMapCountryFullName = new HashMap<LangEnum, Map<CountryEnum, String>>(
-				langs.size());
-
-		for (LangEnum lang : langs) {
-			tmpLangMapCountryFullName.put(lang, MAP_LANG_COUNTRY_FULL_NAMES.get(lang));
-		}
-
-		return Collections.unmodifiableMap(tmpLangMapCountryFullName);
+		return langs.stream().collect(Collectors.toMap(lang -> lang, lang -> MAP_LANG_COUNTRY_FULL_NAMES.get(lang)));
 	}
 
 	private static final Map<LangEnum, Map<CountryEnum, String>> MAP_LANG_COUNTRY_FULL_NAMES;
