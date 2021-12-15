@@ -8,7 +8,7 @@ import fi.ishtech.core.i18n.enums.CountryEnum;
  *
  * @author Muneer Ahmed Syed
  */
-public abstract class CountriesEn {
+public abstract class CountryNameEn {
 
 	public static final Map<CountryEnum, String> fullNames() {
 		return CountryEnum.fullNames();
