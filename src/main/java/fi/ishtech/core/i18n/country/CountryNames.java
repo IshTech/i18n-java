@@ -2,9 +2,10 @@ package fi.ishtech.core.i18n.country;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.TreeMap;
 
 import fi.ishtech.core.i18n.enums.CountryEnum;
 import fi.ishtech.core.i18n.enums.LangEnum;
@@ -37,15 +38,28 @@ public abstract class CountryNames {
 		return byLangOrElseByEn(LangEnum.fromNameIgnoreCaseOrElseNull(lang));
 	}
 
-	public static final Map<LangEnum, Map<CountryEnum, String>> byLangs(List<LangEnum> langs) {
+	public static final Map<LangEnum, Map<CountryEnum, String>> byLangsSortedByFullName(List<LangEnum> langs) {
 		if (langs == null) {
 			return null;
 		}
 
-		return langs.stream()
-				.collect(Collectors.toMap(lang -> lang,
-						lang -> MAP_LANG_COUNTRY_FULL_NAMES.containsKey(lang) ? MAP_LANG_COUNTRY_FULL_NAMES.get(lang)
-								: Collections.emptyMap()));
+		Map<LangEnum, Map<CountryEnum, String>> result = new TreeMap<>();
+		for (LangEnum lang : langs) {
+			if (MAP_LANG_COUNTRY_FULL_NAMES.containsKey(lang)) {
+				Map<CountryEnum, String> sortedMap = new LinkedHashMap<>();
+
+				MAP_LANG_COUNTRY_FULL_NAMES.get(lang)
+						.entrySet()
+						.stream()
+						.sorted(Map.Entry.comparingByValue())
+						.forEachOrdered(x -> sortedMap.put(x.getKey(), x.getValue()));
+				result.put(lang, sortedMap);
+			} else {
+				result.put(lang, null);
+			}
+		}
+
+		return Collections.unmodifiableMap(result);
 	}
 
 	private static final Map<LangEnum, Map<CountryEnum, String>> MAP_LANG_COUNTRY_FULL_NAMES;

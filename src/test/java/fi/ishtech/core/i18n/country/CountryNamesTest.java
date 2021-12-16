@@ -19,8 +19,9 @@ public class CountryNamesTest {
 
 	@Test
 	@Order(1)
-	void testByLangs() {
-		Map<LangEnum, Map<CountryEnum, String>> actual = CountryNames.byLangs(List.of(LangEnum.fi, LangEnum.en));
+	void testByLangsSortedByFullName() {
+		Map<LangEnum, Map<CountryEnum, String>> actual = CountryNames
+				.byLangsSortedByFullName(List.of(LangEnum.za, LangEnum.en, LangEnum.fi));
 		assertNotNull(actual);
 		assertFalse(actual.isEmpty());
 	}
