@@ -42,7 +42,10 @@ public abstract class CountryNames {
 			return null;
 		}
 
-		return langs.stream().collect(Collectors.toMap(lang -> lang, lang -> MAP_LANG_COUNTRY_FULL_NAMES.get(lang)));
+		return langs.stream()
+				.collect(Collectors.toMap(lang -> lang,
+						lang -> MAP_LANG_COUNTRY_FULL_NAMES.containsKey(lang) ? MAP_LANG_COUNTRY_FULL_NAMES.get(lang)
+								: Collections.emptyMap()));
 	}
 
 	private static final Map<LangEnum, Map<CountryEnum, String>> MAP_LANG_COUNTRY_FULL_NAMES;
