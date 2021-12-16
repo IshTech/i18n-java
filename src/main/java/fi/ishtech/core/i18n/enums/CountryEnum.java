@@ -406,6 +406,15 @@ public enum CountryEnum {
 	}
 
 	/**
+	 * Full names of all the countries.
+	 *
+	 * @return {@link Map}&lt;{@link CountryEnum}, {@link String}&gt;
+	 */
+	public static final Map<CountryEnum, String> fullNames() {
+		return MAP_COUNTRY_FULL_NAME;
+	}
+
+	/**
 	 * Official name of the country.
 	 *
 	 * @param name
@@ -730,7 +739,7 @@ public enum CountryEnum {
 		tmpMapCountryFullName.put(VC, "Saint Vincent and the Grenadines");
 		tmpMapCountryFullName.put(WS, "Samoa");
 		tmpMapCountryFullName.put(SM, "San Marino");
-		tmpMapCountryFullName.put(ST, "Sao Tome and Principe");
+		tmpMapCountryFullName.put(ST, "São Tomé and Príncipe");
 		tmpMapCountryFullName.put(SA, "Saudi Arabia");
 		tmpMapCountryFullName.put(SN, "Senegal");
 		tmpMapCountryFullName.put(RS, "Serbia");
