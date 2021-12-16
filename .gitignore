@@ -3,6 +3,7 @@ bin/
 
 ### Maven ###
 #!.mvn/wrapper/maven-wrapper.jar
+pom.xml.versionsBackup
 
 ### STS ###
 .apt_generated
